@@ -51,11 +51,11 @@ WORKDIR /home/stanford_nlp/stanford-corenlp-full-2017-06-09/
 RUN   wget https://nlp.stanford.edu/software/stanford-english-corenlp-2017-06-09-models.jar && \
       wget https://nlp.stanford.edu/software/stanford-english-kbp-corenlp-2017-06-09-models.jar
 
-#RUN wget https://nlp.stanford.edu/software/stanford-arabic-corenlp-2017-06-09-models.jar && \
-#     wget https://nlp.stanford.edu/software/stanford-chinese-corenlp-2017-06-09-models.jar && \
-#     wget https://nlp.stanford.edu/software/stanford-french-corenlp-2017-06-09-models.jar && \
-#     wget https://nlp.stanford.edu/software/stanford-german-corenlp-2017-06-09-models.jar && \
-#     wget https://nlp.stanford.edu/software/stanford-spanish-corenlp-2017-06-09-models.jar
+RUN wget https://nlp.stanford.edu/software/stanford-arabic-corenlp-2017-06-09-models.jar && \
+     wget https://nlp.stanford.edu/software/stanford-chinese-corenlp-2017-06-09-models.jar && \
+     wget https://nlp.stanford.edu/software/stanford-french-corenlp-2017-06-09-models.jar && \
+     wget https://nlp.stanford.edu/software/stanford-german-corenlp-2017-06-09-models.jar && \
+     wget https://nlp.stanford.edu/software/stanford-spanish-corenlp-2017-06-09-models.jar
 WORKDIR /home/stanford_nlp
 
 # Deploy app
