@@ -18,7 +18,7 @@ RUN apt-get install -y openjdk-8-jre && \
     apt-get install -y p7zip-full && \
     apt-get install -y --no-install-recommends sudo curl ca-certificates byobu  && \
     apt-get install -y --no-install-recommends nano \
-                        wget ufw net-tools iptables unattended-upgrades && \
+                        wget ufw net-tools iptables unattended-upgrades netcat && \
     # apt-get install -y --no-install-recommends openssh-server && \
     rm -rf /var/lib/apt/lists/* && apt-get autoremove
 
@@ -61,6 +61,8 @@ WORKDIR /home/stanford_nlp
 # Deploy app
 COPY start_nlp.sh /home/stanford_nlp/app/
 WORKDIR /home/stanford_nlp/app
+
+RUN sudo chown stanford_nlp:stanford_nlp start_nlp.sh
 RUN sudo chmod u+x start_nlp.sh
 
 ENTRYPOINT ["/usr/bin/env", "bash"]
