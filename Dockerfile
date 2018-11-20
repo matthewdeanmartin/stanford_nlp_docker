@@ -65,8 +65,11 @@ WORKDIR /home/stanford_nlp/app
 RUN sudo chown stanford_nlp:stanford_nlp start_nlp.sh
 RUN sudo chmod u+x start_nlp.sh
 
-ENTRYPOINT ["/usr/bin/env", "bash"]
-CMD ["./start_nlp.sh"]
+COPY idle.sh /home/stanford_nlp/app/
+RUN sudo chown stanford_nlp:stanford_nlp idle.sh
+RUN sudo chmod u+x idle.sh
+
+ENTRYPOINT /app/start_nlp.sh && /scripts/idle.sh
 
 EXPOSE 9000
 
